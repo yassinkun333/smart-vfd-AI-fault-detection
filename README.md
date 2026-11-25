@@ -81,13 +81,13 @@ Rolling-element bearings are the #1 cause of motor-pump breakdowns. Localized de
 
 2. **Deep Learning (End-to-End):**
 
-   * Feeds Z-score normalized raw vibration windows directly into neural networks (**1D-CNN, GRU, LSTM, MLP**) without manual feature extraction.
+   * Feeds normalized raw vibration windows directly into neural networks (**1D-CNN, GRU, LSTM, MLP**) without manual feature extraction.
 
 ## Key Results & Embedded Deployment Trade-Off
 
-### 1. Model Performance (Averaged over 10 File-Level Splits)
+### Model Performance (Averaged over 10 File-Level Splits)
 
-| Model Family | Architecture | Input Data | Accuracy | Macro-$F_1$ | 
+| Model Family | Architecture | Input Data | Accuracy | Macro-F1 | 
 | ----- | ----- | ----- | ----- | ----- | 
 | **Deep Learning** | **1D-CNN** | Raw signal window (4096 pts) | **94.0%** | **0.946** | 
 | **Deep Learning** | GRU | Raw signal patches (32 pts) | 89.2% | 0.902 | 
