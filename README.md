@@ -87,13 +87,13 @@ Rolling-element bearings are the #1 cause of motor-pump breakdowns. Localized de
 
 ### 1. Model Performance (Averaged over 10 File-Level Splits)
 
-| Model Family | Architecture | Input Data | Accuracy | Macro-$F_1$ | ROC-AUC | 
-| ----- | ----- | ----- | ----- | ----- | ----- | 
-| **Deep Learning** | **1D-CNN** | Raw signal window (4096 pts) | **94.0%** | **0.946** | **0.999** | 
-| **Deep Learning** | GRU | Raw signal patches (32 pts) | 89.2% | 0.902 | — | 
-| **Classical ML** | **XGBoost** | 17 MI-selected features | **91.8%** | **0.900** | **0.983** | 
-| **Deep Learning** | LSTM | Raw signal patches (32 pts) | 87.2% | 0.889 | — | 
-| **Classical ML** | Random Forest | 25 physical features | — | 0.879 | — | 
-| **Classical ML** | ANN | 25 physical features | — | 0.838 | — | 
-| **Deep Learning** | MLP | Raw signal window (4096 pts) | 54.0% | 0.505 | — | 
+| Model Family | Architecture | Input Data | Accuracy | Macro-$F_1$ | 
+| ----- | ----- | ----- | ----- | ----- | 
+| **Deep Learning** | **1D-CNN** | Raw signal window (4096 pts) | **94.0%** | **0.946** | 
+| **Deep Learning** | GRU | Raw signal patches (32 pts) | 89.2% | 0.902 | 
+| **Classical ML** | **XGBoost** | 17 MI-selected features | **91.8%** | **0.900** |
+| **Deep Learning** | LSTM | Raw signal patches (32 pts) | 87.2% | 0.889 | 
+| **Classical ML** | Random Forest | 25 physical features | — | 0.879 |
+| **Classical ML** | ANN | 25 physical features | — | 0.838 |
+| **Deep Learning** | MLP | Raw signal window (4096 pts) | 54.0% | 0.505 |
 
