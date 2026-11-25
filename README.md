@@ -93,7 +93,7 @@ Rolling-element bearings are the #1 cause of motor-pump breakdowns. Localized de
 | **Deep Learning** | GRU | Raw signal patches (32 pts) | 89.2% | 0.902 | 
 | **Classical ML** | **XGBoost** | 17 MI-selected features | **91.8%** | **0.900** |
 | **Deep Learning** | LSTM | Raw signal patches (32 pts) | 87.2% | 0.889 | 
-| **Classical ML** | Random Forest | 25 physical features | — | 0.879 |
-| **Classical ML** | ANN | 25 physical features | — | 0.838 |
+| **Classical ML** | Random Forest | 25 physical features | 85.8% | 0.879 |
+| **Classical ML** | ANN | 25 physical features | 84.1%| 0.838 |
 | **Deep Learning** | MLP | Raw signal window (4096 pts) | 54.0% | 0.505 |
 
