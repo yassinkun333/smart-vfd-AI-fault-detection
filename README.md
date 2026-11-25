@@ -14,20 +14,20 @@ This project is divided into 2 phases :
 
 ```mermaid
 flowchart LR
-    subgraph Power["1. Power Stage (3 kW)"]
+    subgraph Power["1. Power Stage "]
         AC["230V AC"] --> DC["+325V DC Bus"] --> IPM["3-Phase IPM Inverter"] --> Pump["Motor & Centrifugal Pump"]
     end
 
     subgraph MCU["2. Dual-MCU Control"]
         STM["STM32G431KBT6<br/>• Scalar V/f + 6-ch SPWM<br/>• Current ADC<br/>• Edge AI Target"]
         ESP["ESP32<br/>• Sensor Hub<br/>• BLE / Wi-Fi Bridge"]
-        STM <-->|"UART (ASCII)"| ESP
+        STM <-->|"UART"| ESP
         STM -->|"PWM"| IPM
     end
 
     subgraph HMI["3. Sensors & Mobile App"]
         Sensors["Temp (DS18B20)<br/>Pressure (EPT3100)<br/>Flow (YF-S201)"] --> ESP
-        ESP <-->|"BLE"| App["iOS / Android HMI"]
+        ESP <-->|"BLE"| App["Android HMI"]
     end
 
     subgraph AI["4. AI Fault Diagnosis (Master's Research)"]
