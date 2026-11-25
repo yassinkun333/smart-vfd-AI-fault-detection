@@ -12,30 +12,29 @@ This project is divided into 2 phases :
 
 ## How the System Works
 
-```
+```mermaid
 flowchart LR
     subgraph Power["1. Power Stage (3 kW)"]
         AC["230V AC"] --> DC["+325V DC Bus"] --> IPM["3-Phase IPM Inverter"] --> Pump["Motor & Centrifugal Pump"]
     end
 
     subgraph MCU["2. Dual-MCU Control"]
-        STM["STM32G431KBT6\n• Scalar V/f + 6-ch SPWM\n• Current ADC\n• Edge AI Target"]
-        ESP["ESP32\n• Sensor Hub\n• BLE / Wi-Fi Bridge"]
+        STM["STM32G431KBT6<br/>• Scalar V/f + 6-ch SPWM<br/>• Current ADC<br/>• Edge AI Target"]
+        ESP["ESP32<br/>• Sensor Hub<br/>• BLE / Wi-Fi Bridge"]
         STM <-->|"UART (ASCII)"| ESP
         STM -->|"PWM"| IPM
     end
 
     subgraph HMI["3. Sensors & Mobile App"]
-        Sensors["Temp (DS18B20)\nPressure (EPT3100)\nFlow (YF-S201)"] --> ESP
+        Sensors["Temp (DS18B20)<br/>Pressure (EPT3100)<br/>Flow (YF-S201)"] --> ESP
         ESP <-->|"BLE"| App["iOS / Android HMI"]
     end
 
     subgraph AI["4. AI Fault Diagnosis (Master's Research)"]
-        Vib["Vibration Signal\n(4096-pt Windows)"] --> Path1["ML Path: 17 Hilbert/Time Features → XGBoost"]
+        Vib["Vibration Signal<br/>(4096-pt Windows)"] --> Path1["ML Path: 17 Hilbert/Time Features → XGBoost"]
         Vib --> Path2["DL Path: Raw Normalized Signal → 1D-CNN"]
-        Path1 & Path2 --> Result["Bearing Fault Classification\n(Normal | Inner | Outer | Ball)"]
+        Path1 & Path2 --> Result["Bearing Fault Classification<br/>(Normal | Inner | Outer | Ball)"]
     end
-
 ```
 
 ## Part 1: VFD Hardware & Embedded Control (Engineering)
